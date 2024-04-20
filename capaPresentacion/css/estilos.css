@@ -1,0 +1,52 @@
+body {
+    /*display: grid;*/
+    background-color: lightskyblue;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    justify-self: right;
+    border-radius: 50px;
+}
+
+.boton {
+    cursor: pointer;
+    background-color: black;
+    padding: 20px;
+    width: 800px;
+    border-radius: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.tituloIndex {
+    justify-self: left;
+}
+
+.articleIndex {
+    display: grid;
+    justify-content: center;
+    row-gap: 50px;
+}
+
+
+
+.subtituloIndex {
+    justify-self: center;
+}
+
+
+.boton:hover {
+    background-color: rgb(18, 155, 201);
+}
