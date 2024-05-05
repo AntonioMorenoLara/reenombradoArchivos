@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=family=Montserrat:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="cabeceraIndex">
+    <header class="headerIndex">
         <img class="logo" src="./images/logo.jpg" alt="logoArchivo">
         <h1 class="tituloIndex">Reenombrado de archivos</h1>
     </header>
