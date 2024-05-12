@@ -23,7 +23,7 @@
                 </a>
             </section>
             <section>
-                <a href="variosArchvios.php">
+                <a href="variosArchivos.php">
                     <button class="boton">Varios Archivos</button>
                 </a>
             </section>
