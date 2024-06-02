@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/estilos.css" rel="stylesheet" type="text/css">
     <title>Un Archivo</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.jpg">
 </head>
 <body style="margin:0 auto;">
     <nav style="margin:-16px">
@@ -18,15 +19,18 @@
         <h1 style="text-align:center;">Reenombrar un archivo</h1>
     </header>
     <main class="mainUnArchivo">
-        <h2 class="subtitleUnArchivo">Selecciona un archivo</h2>
+        
         <section>
             <!-- Ponerlo con PHP -->
-            <input class="inputFile" style="margin-bottom:50px;" type="file" title="Selecciona un archivo">
+            
         </section>
         <section class="nuevoNombreArchivo">
-            <h3>Escribe el nombre nuevo</h3>
+            
             <!-- Ponerlo con PHP -->
+            <h2 class="subtitleUnArchivo">Selecciona un archivo</h2>
             <form class="formUnArchivo" action="procesarUnArchivo.php" method="POST">
+                <input class="inputFile" style="margin-bottom:50px;" type="file" title="Selecciona un archivo">
+                <h3 class="header3">Escribe el nombre nuevo</h3>
                 <input class="inputTextUnArchivo">
                 <input class="buttonInput" type="submit" name="aceptarUnArchivo" value="Aceptar">
                 <input class="buttonInput" type="reset" value="Borrar nombre">

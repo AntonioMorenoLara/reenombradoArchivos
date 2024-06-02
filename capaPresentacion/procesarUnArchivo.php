@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/estilos.css" rel="stylesheet" type="text/css">
     <title>Validar archivo</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.jpg">
 </head>
 <body>
     <main>
