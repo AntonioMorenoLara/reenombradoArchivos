@@ -26,9 +26,9 @@
         <section class="nuevoNombreArchivo">
             <h3>Escribe el nombre nuevo</h3>
             <!-- Ponerlo con PHP -->
-            <form class="formUnArchivo" action="procesarUnArchivo" method="POST">
+            <form class="formUnArchivo" action="procesarUnArchivo.php" method="POST">
                 <input class="inputTextUnArchivo">
-                <input class="buttonInput" type="submit" value="Aceptar">
+                <input class="buttonInput" type="submit" name="aceptarUnArchivo" value="Aceptar">
                 <input class="buttonInput" type="reset" value="Borrar nombre">
             </form>
             

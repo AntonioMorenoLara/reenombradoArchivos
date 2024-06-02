@@ -113,6 +113,7 @@ nav li {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .buttonInput:hover {
@@ -179,4 +180,27 @@ input[type="file"]::-webkit-file-upload-button:hover {
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.exito {
+    color: rgb(144 254 0);
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.displayProcesar {
+    display: grid;
+    grid-template-columns: 50%;
+    justify-content: center;
+    margin-top:10%;
+}
+
+.botonCenter {
+    display: grid;
+    justify-content: center;
+    text-decoration: none;
 }
