@@ -93,9 +93,7 @@ nav li {
 
 .formUnArchivo {
     display: grid;
-    grid-template-columns: 50% 50%;
     row-gap: 20px;
-    column-gap: 20px;
 }
 
 .inputTextUnArchivo {
@@ -172,6 +170,16 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .header3 {
     grid-column: 1 / 3;
     justify-self: center;
+}
+
+/* ESTILOS VARIOS ARCHIVOS */
+
+.displayNewNameFiles {
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 20px;
+
 }
 
 .subtitleVariosArchivos {

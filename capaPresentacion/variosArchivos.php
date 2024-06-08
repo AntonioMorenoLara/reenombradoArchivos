@@ -19,24 +19,26 @@
         <h1 style="text-align:center;">Reenombrar varios archivos</h1>
     </header>
     <main class="mainUnArchivo borderFile">
-        
         <section>
             <!-- Ponerlo con PHP -->
-            <h2 class="subtitleVariosArchivos">Escribe el directorio</h2>
-            <input class="inputFile" style="margin-bottom:50px;" type="text" title="Selecciona directorio">
-        </section>
-        <section>
-            <!-- Ponerlo con PHP -->
-            <h2 class="subtitleVariosArchivos">Escribe la extensión</h2>
-            <input class="inputFile" style="margin-bottom:50px;" type="text" title="Selecciona extensión">
+            
         </section>
         <section class="nuevoNombreArchivo">
-            <h3>Escribe el nombre nuevo</h3>
+            
             <!-- Ponerlo con PHP -->
-            <form class="formUnArchivo" action="procesarUnArchivo" method="POST">
-                <input class="inputTextUnArchivo">
-                <input class="buttonInput" type="submit" value="Aceptar">
-                <input class="buttonInput" type="reset" value="Borrar nombre">
+            <form action="procesarUnArchivo" method="POST">
+                <h2 class="subtitleVariosArchivos">Escribe el directorio</h2>
+                <input class="inputFile" style="margin-bottom:50px;" type="text" title="Selecciona directorio">
+                <h2 class="subtitleVariosArchivos">Escribe la extensión</h2>
+                <input class="inputFile" style="margin-bottom:50px;" type="text" title="Selecciona extensión">
+                    <h3>Escribe el nombre de los archivos</h3>
+                <div class="displayNewNameFiles">
+                    <input class="inputTextUnArchivo">
+                    <input class="buttonInput" type="submit" value="Aceptar">
+                    <input class="buttonInput" type="reset" value="Borrar nombre">
+                </div>
+
+                
             </form>
         </section>
     </main>
