@@ -33,7 +33,7 @@
                 <input class="inputFile" style="margin-bottom:50px;" type="text" name="extension" title="Selecciona extensión">
                     <h3>Escribe el nombre de los archivos</h3>
                 <div class="displayNewNameFiles">
-                    <input class="inputTextUnArchivo" name="nuevoNombreArchivo">
+                    <input class="inputTextUnArchivo" name="nombreArchivo">
                     <input class="buttonInput" type="submit" name="aceptarFiles" value="Aceptar">
                     <input class="buttonInput" type="reset" value="Borrar nombre">
                 </div>
