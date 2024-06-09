@@ -26,15 +26,15 @@
         <section class="nuevoNombreArchivo">
             
             <!-- Ponerlo con PHP -->
-            <form action="procesarUnArchivo" method="POST">
+            <form action="procesarVariosArchivos.php" method="POST">
                 <h2 class="subtitleVariosArchivos">Escribe el directorio</h2>
-                <input class="inputFile" style="margin-bottom:50px;" type="text" title="Selecciona directorio">
+                <input class="inputFile" style="margin-bottom:50px;" type="text" name="directorio" title="Selecciona directorio">
                 <h2 class="subtitleVariosArchivos">Escribe la extensión</h2>
-                <input class="inputFile" style="margin-bottom:50px;" type="text" title="Selecciona extensión">
+                <input class="inputFile" style="margin-bottom:50px;" type="text" name="extension" title="Selecciona extensión">
                     <h3>Escribe el nombre de los archivos</h3>
                 <div class="displayNewNameFiles">
-                    <input class="inputTextUnArchivo">
-                    <input class="buttonInput" type="submit" value="Aceptar">
+                    <input class="inputTextUnArchivo" name="nuevoNombreArchivo">
+                    <input class="buttonInput" type="submit" name="aceptarFiles" value="Aceptar">
                     <input class="buttonInput" type="reset" value="Borrar nombre">
                 </div>
 

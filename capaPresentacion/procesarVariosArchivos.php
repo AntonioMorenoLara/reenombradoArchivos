@@ -10,46 +10,51 @@
 <body>
     <main>
 
-        <section class="displayProcesar">
-            <h3 class="exito">El nombre se ha cambiado con éxito</h3>
-            <a href="index.php" class="botonCenter">
-                <button class="buttonInput" style="padding:0 20px 0 20px;">Inicio</button>
-            </a>
-        </section>
-
-        <section class="displayProcesar">
-            <h3 class="error">No se ha podido cambiar el nombre por no existe la extensión en ese directorio</h3>
-            <a href="variosArchivos.php" class="botonCenter">
-                <button class="buttonInput" style="padding:0 20px 0 20px;">Volver</button>
-            </a>
-        </section>
-        <section class="displayProcesar">
-            <h3 class="error">No se ha podido cambiar el nombre, porque no existe el directorio</h3>
-            <a href="variosArchivos.php" class="botonCenter">
-                <button class="buttonInput" style="padding:0 20px 0 20px;">Volver</button>
-            </a>
-        </section>
-
-    <!--<?php
-
-        $archivo = new Archivo();
-
-
-
-    if (isset($_POST['aceptarUnArchivo'])) {
-        if ($archivo->cambiarNombreArchivo()) {
         
+
+    <?php
+        if (isset($_POST['aceptarFiles'])) {
+            ?>
+
+        <?php
+
+            $archivo = new Archivo();
+
+            $archivo->setExtension($_POST['extension']);
+            $archivo->setNombreArchivo($_POST['nombreArchivo']);
+            $archivo->setNombreDirectorio($_POST['directorio']);
+
+            if ($archivo->cambiarNombreArchivo()) {
+                ?>
+                <section class="displayProcesar">
+                    <h3 class="exito">El nombre se ha cambiado con éxito</h3>
+                    <a href="index.php" class="botonCenter">
+                        <button class="buttonInput" style="padding:0 20px 0 20px;">Inicio</button>
+                    </a>
+                </section>
+            <?php
+            }
+            else {
+                ?>
+                <section class="displayProcesar">
+                    <h3 class="error">Se ha producido un error al cambiar el nombre</h3>
+                    <a href="unArchivo.php" class="botonCenter">
+                        <button class="buttonInput" style="padding:0 20px 0 20px;">Volver</button>
+                    </a>
+                </section>
+            <?php
+            }
         }
         else {
             echo '<h3 class="error">Se ha producido un error al cambiar el nombre</h3>';
+            ?>
+
+            <a href="index.php" class="botonCenter">
+                <button class="buttonInput" style="padding:0 20px 0 20px;">Inicio</button>
+            </a>
+            <?php
         }
-    }
-    else {
-        echo '<h3 class="error">Se ha producido un error al cambiar el nombre</h3>';
-    }
-
-
-?>-->
+    ?>
     </main>
 
 </body>
