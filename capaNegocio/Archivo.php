@@ -1,11 +1,12 @@
 <?php
 
+include '../capaDatos/ArchivoDatos.php';
+
 class Archivo {
 
     private string $extension;
     private string $nombreArchivo;
     private string $nombreDirectorio;
-    private array $archivos;
 
 
     public function setExtension($extension) : void{
@@ -45,11 +46,14 @@ class Archivo {
     public function cambiarNombreArchivos() {
         
         $archivoDatos = new ArchivoDatos();
-
+        
+        if (empty($this->extension) || empty($this->nombreArchivo) || empty($this->nombreDirectorio)) {
+            return false;
+        }
 
         $archivoDatos->setNombreArchivoDatos($this->nombreArchivo);
         $archivoDatos->setNombreDirectorioDatos($this->nombreDirectorio);
-        $archivoDatos->setExtensionDatos($this->extensionDatos);
+        $archivoDatos->setExtensionDatos($this->extension);
 
         return $archivoDatos->cambiarNombreArchivos();
 
@@ -59,10 +63,4 @@ class Archivo {
 
     }
 
-
-    /*public setArchivos($archivos) : void{
-
-        $this->archivos = $archivos;
-
-    }*/
 }
