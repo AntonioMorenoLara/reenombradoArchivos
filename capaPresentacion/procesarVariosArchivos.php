@@ -15,13 +15,15 @@
             ?>
 
         <?php
+        try {
             $archivo = new Archivo();
 
             $archivo->setExtension($_POST['extension']);
             $archivo->setNombreArchivo($_POST['nombreArchivo']);
             $archivo->setNombreDirectorio($_POST['directorio']);
 
-            if ($archivo->cambiarNombreArchivos()) {
+            $archivo->cambiarNombreArchivos();
+
                 ?>
                 <section class="displayProcesar">
                     <h3 class="exito">El nombre se ha cambiado con éxito</h3>
@@ -31,11 +33,11 @@
                 </section>
             <?php
             }
-            else {
+            catch(Exception $ex) {
                 ?>
                 <section class="displayProcesar">
-                    <h3 class="error">Se ha producido un error al cambiar el nombre</h3>
-                    <a href="variosArchivos.php" class="botonCenter">
+                    <h3 class="error"><?= $ex->getMessage(); ?> </h3>
+                    <a href="index.php" class="botonCenter">
                         <button class="buttonInput" style="padding:0 20px 0 20px;">Volver</button>
                     </a>
                 </section>

@@ -15,21 +15,22 @@
         <img class="logo" src="./images/logo.jpg" alt="logoArchivo">
         <h1 class="tituloIndex">Reenombrado de archivos</h1>
     </header>
-    <main>
-        <article class="articleIndex">
-            <h2 class="subtituloIndex">¿Qué quieres cambiar?</h2>
-            <section>
-                <a href="unArchivo.php">
-                    <button class="boton">Un archivo</button>
-                </a>
-            </section>
-            <section>
-                <a href="variosArchivos.php">
-                    <button class="boton">Varios Archivos</button>
-                </a>
-            </section>
-        </article>
+    <main class="mainUnArchivo borderFile">
+        <section class="nuevoNombreArchivo">
+            
+            <form action="procesarVariosArchivos.php" method="POST">
+                <h2 class="subtitleVariosArchivos">Escribe el directorio <br> (C:\Nombre\directorio)</h2>
+                <input class="inputFile" style="margin-bottom:50px;" type="text" name="directorio" title="Selecciona directorio">
+                <h2 class="subtitleVariosArchivos">Escribe la extensión <br> (Ejemplo: txt)</h2>
+                <input class="inputFile" style="margin-bottom:50px;" type="text" name="extension" title="Selecciona extensión">
+                    <h3>Escribe el nombre de los archivos</h3>
+                <div class="displayNewNameFiles">
+                    <input class="inputTextUnArchivo" name="nombreArchivo">
+                    <input class="buttonInput" type="submit" name="aceptarFiles" value="Aceptar">
+                    <input class="buttonInput" type="reset" value="Borrar datos">
+                </div>
+            </form>
+        </section>
     </main>
-    
 </body>
 </html>

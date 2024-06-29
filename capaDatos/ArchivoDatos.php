@@ -19,7 +19,6 @@ class ArchivoDatos {
         return $this->extension;
     }
 
-
     public function setNombreArchivoDatos($nombreArchivo) : void {
 
         $this->nombreArchivo = $nombreArchivo;
@@ -30,7 +29,7 @@ class ArchivoDatos {
         return $this->nombreArchivo;
     }
 
-    public function setNombreDirectorioDatos($nombreDirectorio) : void{
+    public function setNombreDirectorioDatos($nombreDirectorio) : void {
 
         $this->nombreDirectorio = $nombreDirectorio;
     }
@@ -40,17 +39,20 @@ class ArchivoDatos {
         return $this->nombreDirectorio;
     }
 
-    public function cambiarNombreArchivos() : bool {
+    public function cambiarNombreArchivos() : void {
 
         if (count(scandir($this->nombreDirectorio)) == 2) {
-            return false;
+            throw new Exception('No hay archivos en este directorio');;
         }
 
         $archivosDir = scandir($this->nombreDirectorio);
+
+
+
         $existeExt = false;
 
         if ($archivosDir) {
-
+            $i = 1;
             foreach($archivosDir as $key => $value) {
                 
                 if ($key > 1) {
@@ -58,36 +60,43 @@ class ArchivoDatos {
                     $archivoArray = explode('.', $value);
 
                     if ($archivoArray[1] == $this->extension) {
+
                         $rutaArchivo = $this->nombreDirectorio . '/' . $value;
                         $this->fileSelector = @fopen($rutaArchivo,'r+');
 
+                        $existeExt = true;
+                        
                         if (!$this->fileSelector) {
-                            return false;
+                            throw new Exception('El archivo o archivos están abiertos');
                         }
+
+                        
+                        if ($archivoArray[1] == 'txt') {
+                            if(stripos(shell_exec('tasklist'), 'notepad.exe')) {
+                                throw new Exception('Estás intentando modificar el nombre de uno o varios .txt, cierra el bloc de notas');
+                            }
+                        }
+
                         fclose($this->fileSelector);
 
-                        $existeExt = true;
-                        $nuevoArchivo = $this->nombreDirectorio . '/' . $this->nombreArchivo . $key-1 . '.' . $this->extension;
+                        $nuevoArchivo = $this->nombreDirectorio . '/' . $this->nombreArchivo . $i . '.' . $this->extension;
 
                         rename($rutaArchivo, $nuevoArchivo);
+                        $i++;
                     }
                 }
             }
 
             if (!$existeExt) {
-                return false;
+                throw new Exception('No existe esta extensión en este directorio');
             }
 
             $nombreDir = $this->nombreDirectorio;
             exec("explorer $nombreDir");
-
-            return true;
         }
-        return false;
+        else {
+            throw new Exception('Nombre no válido');
+        }
+        
     }
-
-    public function cambiarNombreArchivo() {
-
-    }
-
 }
